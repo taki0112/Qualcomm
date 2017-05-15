@@ -1,21 +1,7 @@
 import json
+
 IM_PATH = "./annotations_IM.raf"
 Shape_PATH = "./annotations_Shape.raf"
-
-
-"""
-Architecture (list type)
-image       [identifier], [imsize]
-regions     [ansize], [boxcorners] or [vertices], [class], [type]
-   - linegroup   [tags], [vertices]
-version 
-json = list type
-regions = list type
-linegroup = list type... but may be length = 1
-box = dict[0]['regions'][0]['boxcorners']s
-polygon = dict[0]['regions'][0]['vertices']
-line = dict[0]['regions'][0]['linegroup'][0]['vertices']
-"""
 
 
 def IM_to_Shape() :
@@ -46,10 +32,6 @@ def IM_to_Shape() :
             IM_annotations[key]['regions'][i]['properties'] = properties
 
     save(IM_annotations, Shape_PATH)
-
-
-
-
 
 
 def Shape_to_IM() :
