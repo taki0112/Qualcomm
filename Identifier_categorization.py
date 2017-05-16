@@ -10,7 +10,6 @@ def folder_make(folder) :
 with open(path) as json_file:
     Architecture = json.load(json_file)
     image_dict = defaultdict(list)
-    information = ""
     for i,_ in enumerate(Architecture) :
         folder_name = Architecture[i]['image']['identifier'].split("/")[0]
         image_dict[folder_name].append(Architecture[i])
